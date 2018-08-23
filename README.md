@@ -16,8 +16,8 @@ And, it is done!
 
 ### Requirements
 
-- tensorflow==1.2
-- future==0.16.0
+- tensorflow==1.9
+- future
 - rdkit
 - keras
 - numpy
@@ -25,6 +25,9 @@ And, it is done!
 - pandas
 - tqdm
 - pymatgen
+- dill
+
+Memo: For Mac, `` pip install keras-tqdm `` is needed.
 
 ## How to use
 
