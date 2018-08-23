@@ -596,7 +596,10 @@ def getSymmetry(ids, xyz):
 
 
 def logP(mol, train_smiles=None):
-    val = Crippen.MolLogP(mol)
+    try:
+        val = Crippen.MolLogP(mol)
+    except:
+        val = 0.0
     return val
 
 def SA_score(mol, SA_model):
