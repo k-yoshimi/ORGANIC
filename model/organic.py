@@ -320,6 +320,12 @@ class ORGANIC(object):
 
         self.sess = tf.Session(config=self.config)
         self.folder = 'checkpoints/{}'.format(self.PREFIX)
+        if not os.path.exists(self.folder):
+            try:
+                os.makedirs(self.folder)
+            except OSError as e:
+                if e.errno != errno.EEXIST:
+                    raise
 
     def define_metric(self, name, metric, load_metric=lambda *args: None,
                       pre_batch=False, pre_metric=lambda *args: None):
